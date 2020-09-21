@@ -1,0 +1,191 @@
+# NPM Template
+
+## Packages
+
++ Webpack + Webpack CLI
++ Webpack Dev Server
++ ESLint
++ Babel [core, preset-env]
++ Jest
++ Babel Jest
++ PubSub JS
+
+### Loaders
+
++ Style Loader
++ CSS Loader
++ Babel Loader
++ Eslint Loader
+
+### Plugins
+
++ Clean Webpack Plugin
++ HTML Webpack Plugin
+
+------------
+
+**Command:**
+> npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js
+
+------------
+
++ package.json
+
+```diff
+- "main": "index.js"
++ "private": "true"
+```
+
+```json
+"scripts": {
+  "test": "jest --watch --runInBand",
+  "build": "webpack",
+  "build:prod": "webpack --config webpack.config.prod.js",
+  "start": "webpack-dev-server"
+}
+```
+
++ webpack.config.js
+
+```javascript
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+  mode: 'development',
+  entry: './src/app.js',
+
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/' // Might cause an error in case of code splitting
+  },
+
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist')
+  },
+
+  devtool: 'cheap-module-eval-source-map',
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+
+      {
+        test: /\.js$/,
+        exclude: '/node_modules/',
+        use: [
+          'babel-loader',
+          'eslint-loader'
+        ]
+      }
+    ]
+  },
+
+  plugins: [
+    new HtmlWebpackPlugin({ template: 'src/index.html' })
+  ]
+}
+```
+
++ webpack.config.prod.js
+
+```javascript
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+module.exports = {
+  mode: 'production',
+  entry: './src/app.js',
+
+  output: {
+    filename: '[name].[contenthash].js',
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/dist/' // Might cause an error in case of code splitting
+  },
+
+  devServer: {
+    contentBase: path.resolve(__dirname, 'dist')
+  },
+
+  devtool: 'cheap-source-map',
+
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
+      },
+
+      {
+        test: /\.js$/,
+        exclude: '/node_modules/',
+        use: [
+          'babel-loader',
+          'eslint-loader'
+        ]
+      }
+    ]
+  },
+
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: 'src/index.html' })
+  ]
+}
+```
+
++ babel.config.js
+
+```javascript
+module.exports = {
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        targets: {
+          node: 'current'
+        }
+      }
+    ]
+  ]
+}
+```
+
++ ESLint
+
+>./node_modules/.bin/eslint --init
+
+```diff
++ env: { jest: true }
+```
+
++ Jest
+
+>./node_modules/.bin/jest --init
+
++ src/index.html
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="app">
+    </div>
+  </body>
+</html>
+```
