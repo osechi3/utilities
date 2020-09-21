@@ -180,6 +180,7 @@ module.exports = {
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <meta charset="UTF-8">
     <title></title>
   </head>
