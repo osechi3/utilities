@@ -58,7 +58,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/' // Might cause an error in case of code splitting
+    publicPath: '/'
   },
 
   devServer: {
@@ -81,7 +81,7 @@ module.exports = {
         test: /\.js$/,
         exclude: '/node_modules/',
         use: [
-          'babel-loader',
+          'babel-loader?compact=false',
           'eslint-loader'
         ]
       }
@@ -108,14 +108,15 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/dist/' // Might cause an error in case of code splitting
+
+    /* name of the repo (if deploying to gh-pages)
+      or '/' (if deploy to firebase) */
+    publicPath: '/'
   },
 
   devServer: {
     contentBase: path.resolve(__dirname, 'dist')
   },
-
-  devtool: 'cheap-source-map',
 
   module: {
     rules: [
