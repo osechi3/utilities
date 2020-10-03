@@ -114,7 +114,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
 
     /* name of the repo (if deploying to gh-pages)
-      or '/' (if deploy to firebase) */
+      or '/' (if deploying to firebase) */
     publicPath: '/'
   },
 
