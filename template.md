@@ -193,6 +193,19 @@ module.exports = {
 
 >./node_modules/.bin/jest --init
 
+------
+
+## Folder Structure
+
++ src
+  + components
+  + styles
+  + tests
+
+------
+
+## Initial Files
+
 + src/index.html
 
 ```html
