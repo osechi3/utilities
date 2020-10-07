@@ -221,4 +221,20 @@ module.exports = {
     </div>
   </body>
 </html>
+
+```
+
++ src/app.js
++ src/styles/app.css
++ sandbox.js
++ `README.md`
++ `PLAN.md`
++ .gitignore
+
+```git
+node_modules
+sandbox.js
+PLAN.md
+dist
+
 ```
