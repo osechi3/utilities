@@ -103,6 +103,7 @@ module.exports = {
     new HtmlWebpackPlugin({ template: 'src/index.html' })
   ]
 }
+
 ```
 
 + webpack.config.prod.js
@@ -159,6 +160,7 @@ module.exports = {
     new OptimizeCssAssetsPlugin()
   ]
 }
+
 ```
 
 + babel.config.js
@@ -176,6 +178,7 @@ module.exports = {
     ]
   ]
 }
+
 ```
 
 + ESLint
