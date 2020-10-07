@@ -24,10 +24,19 @@
 + Mini CSS Extract Plugin
 + Optimize CSS Assets Plugin
 
-------------
+------
 
-**Command:**
-> npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js mini-css-extract-plugin optimize-css-assets-webpack-plugin
+## Commands
+
+```shell
+npm init -y
+```
+
+```shell
+npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js mini-css-extract-plugin optimize-css-assets-webpack-plugin
+```
+
+------
 
 ------------
 
