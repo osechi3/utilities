@@ -49,10 +49,9 @@ npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plug
 
 ```json
 "scripts": {
-  "test": "jest --watch --runInBand",
-  "build": "webpack",
+  "build": "webpack --config webpack.config.js",
   "build:prod": "webpack --config webpack.config.prod.js",
-  "start": "webpack-dev-server"
+  "start": "webpack serve --config webpack.config.js"
 }
 ```
 
@@ -76,7 +75,7 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'dist')
   },
 
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
 
   module: {
     rules: [
