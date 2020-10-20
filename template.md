@@ -255,6 +255,19 @@ import 'normalize.css'
 ```
 
 + src/styles/app.css
+
+```css
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+```
+
 + sandbox.js
 + `README.md`
 + `PLAN.md`
