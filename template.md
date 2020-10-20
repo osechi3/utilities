@@ -33,7 +33,7 @@ npm init -y
 ```
 
 ```shell
-npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js mini-css-extract-plugin optimize-css-assets-webpack-plugin
+npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js mini-css-extract-plugin optimize-css-assets-webpack-plugin stylelint stylelint-config-standard stylelint-order stylelint-config-rational-order
 ```
 
 ------
@@ -186,6 +186,26 @@ module.exports = {
 
 ```diff
 + env: { jest: true }
+```
+
++ .stylelintrc.json
+
+```json
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-rational-order"
+  ],
+  "rules": {
+    "declaration-empty-line-before": null,
+    "order/properties-order": [],
+    "plugin/rational-order": [true, {
+      "border-in-box-model": false,
+      "empty-line-between-groups": true
+    }]
+  }
+}
+
 ```
 
 + Jest
