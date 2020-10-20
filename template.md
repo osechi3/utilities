@@ -34,6 +34,8 @@ npm init -y
 
 ```shell
 npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js mini-css-extract-plugin optimize-css-assets-webpack-plugin stylelint stylelint-config-standard stylelint-order stylelint-config-rational-order
+
+npm install normalize.css
 ```
 
 ------
@@ -245,6 +247,13 @@ module.exports = {
 ```
 
 + src/app.js
+
+```js
+import './styles/app.css'
+import 'normalize.css'
+
+```
+
 + src/styles/app.css
 + sandbox.js
 + `README.md`
