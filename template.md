@@ -212,7 +212,8 @@ module.exports = {
 <html lang="en">
   <head>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta charset="utf-8">
     <title></title>
   </head>
   <body>
