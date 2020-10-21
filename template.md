@@ -73,6 +73,11 @@ npm install normalize.css
 ```javascript
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+
+const ImageminWebpPlugin = require('imagemin-webp-webpack-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default
+const imageminMozjpeg = require('imagemin-mozjpeg')
 
 module.exports = {
   mode: 'development',
@@ -112,7 +117,38 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({ template: 'src/index.html' })
+    new HtmlWebpackPlugin({ template: 'src/index.html' }),
+
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/assets/images',
+          to: path.resolve(__dirname, 'dist/images')
+        }
+      ]
+    }),
+
+    new ImageminWebpPlugin({
+      config: [{
+        test: /\.(jpe?g|png)/,
+        options: {
+          quality: 60
+        }
+      }]
+    }),
+
+    new ImageminPlugin({
+      jpegtran: null,
+      gifsicle: null,
+      optipng: null,
+
+      plugins: [
+        imageminMozjpeg({
+          quality: 75,
+          progressive: true
+        })
+      ]
+    })
   ]
 }
 
