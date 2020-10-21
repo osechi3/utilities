@@ -10,6 +10,11 @@
 + Babel Jest
 + PubSub JS
 
+### CSS
+
++ Stylelint
++ normalize.css
+
 ### Loaders
 
 + Style Loader
