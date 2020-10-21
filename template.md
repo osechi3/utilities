@@ -28,12 +28,12 @@
 
 + HTML Webpack Plugin
 
-### Plugins
+### Assets
 
-+ Clean Webpack Plugin
-+ HTML Webpack Plugin
-+ Mini CSS Extract Plugin
-+ Optimize CSS Assets Plugin
++ Copy Webpack Plugin
++ Imagemin WebP Webpack Plugin (converting images to .webp)
++ Imagemin Webpack Plugin (minifying images)
+  + Imagemin Mozjpeg Plugin
 
 ------
 
@@ -44,7 +44,7 @@ npm init -y
 ```
 
 ```shell
-npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js mini-css-extract-plugin optimize-css-assets-webpack-plugin stylelint stylelint-config-standard stylelint-order stylelint-config-rational-order
+npm install --save-dev webpack webpack-cli webpack-dev-server clean-webpack-plugin html-webpack-plugin eslint style-loader css-loader babel-loader @babel/core @babel/preset-env eslint-loader jest babel-jest pubsub-js mini-css-extract-plugin optimize-css-assets-webpack-plugin stylelint stylelint-config-standard stylelint-order stylelint-config-rational-order copy-webpack-plugin imagemin-webpack-plugin imagemin-webp-webpack-plugin imagemin-mozjpeg
 
 npm install normalize.css
 ```
