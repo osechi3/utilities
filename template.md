@@ -2,25 +2,31 @@
 
 ## Packages
 
+### General
+
 + Webpack + Webpack CLI
 + Webpack Dev Server
++ Clean Webpack Plugin
 + ESLint
++ Eslint Loader
 + Babel [core, preset-env]
++ Babel Loader
 + Jest
 + Babel Jest
 + PubSub JS
 
 ### CSS
 
-+ Stylelint
-+ normalize.css
-
-### Loaders
-
 + Style Loader
 + CSS Loader
-+ Babel Loader
-+ Eslint Loader
++ Stylelint
++ normalize.css
++ Mini CSS Extract Plugin
++ Optimize CSS Assets Plugin
+
+### HTML
+
++ HTML Webpack Plugin
 
 ### Plugins
 
