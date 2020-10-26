@@ -62,6 +62,7 @@ npm install normalize.css
 
 ```json
 "scripts": {
+  "test": "jest --watch --runInBand",
   "build": "webpack --config webpack.config.js",
   "build:prod": "webpack --config webpack.config.prod.js",
   "start": "webpack serve --config webpack.config.js"
