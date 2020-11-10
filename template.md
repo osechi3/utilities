@@ -291,7 +291,8 @@ module.exports = {
     "plugin/rational-order": [true, {
       "border-in-box-model": false,
       "empty-line-between-groups": true
-    }]
+    }],
+    "number-leading-zero": "never"
   }
 }
 
