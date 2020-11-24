@@ -331,6 +331,7 @@ module.exports = {
   </head>
   <body>
     <div id="app">
+      Hello world
     </div>
   </body>
 </html>
@@ -342,6 +343,8 @@ module.exports = {
 ```js
 import './styles/app.css'
 import 'normalize.css'
+
+console.log('Hello world')
 
 ```
 
@@ -356,6 +359,10 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+#app {
+  background-color: green;
 }
 
 ```
