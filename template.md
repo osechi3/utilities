@@ -310,6 +310,9 @@ module.exports = {
   + components
   + styles
   + tests
+  + assets
+    + images
+    + fonts
 
 ------
 
